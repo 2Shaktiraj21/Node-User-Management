@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .popup-form {
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Button to trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Open Form
+</button>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">User Information</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form class="popup-form" id="userForm" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="profileImage">Profile Image:</label>
+            <input type="file" class="form-control-file" id="profileImage" name="profileImage">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Edit User Form Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editForm" enctype="multipart/form-data">
+          <input type="hidden" id="userId" name="userId">
+          <div class="form-group">
+            <label for="editUsername">Username:</label>
+            <input type="text" class="form-control" id="editUsername" name="username" placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="editProfileImage">Profile Image:</label>
+            <input type="file" class="form-control-file" id="editProfileImage" name="profileImage">
+            <small class="form-text text-muted">Leave empty to keep the current image.</small>
+          </div>
+          <div class="form-group">
+            <label for="editEmail">Email:</label>
+            <input type="email" class="form-control" id="editEmail" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="editPhone">Phone Number:</label>
+            <input type="tel" class="form-control" id="editPhone" name="phone" placeholder="Enter phone number">
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Input -->
+<div class="container mt-3">
+  <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+</div>
+
+<!-- User Table -->
+<div class="container mt-3">
+  <table id="userTable" class="table user-table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Profile Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- User data will be populated here -->
+    </tbody>
+  </table>
+  <!-- Pagination UI -->
+  <div class="container mt-3">
+    <ul id="pagination" class="pagination justify-content-center"></ul>
+  </div>
+
+</div>
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
